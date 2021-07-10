@@ -1,7 +1,5 @@
 package controllers
-
 import javax.inject._
-
 import play.api._
 import play.api.mvc._
 import play.api.db._
@@ -33,11 +31,6 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
 
     //This is a main home function that passes the data associated within the arrays to the home.scala.html/
     def index: Action[AnyContent] = Action {
-      Ok(views.html.index(
-        indexNo(0),indexNo(1),indexNo(2),indexNo(3),
-        firstName(0),firstName(1),firstName(2),firstName(3),
-        lastName(0),lastName(1),lastName(2),lastName(3)
-      ))
+      Ok(views.html.index(indexNo,firstName,lastName))
     }
-
   }
